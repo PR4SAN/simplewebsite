@@ -1,0 +1,389 @@
+/*@import "compass";*/
+@import "import/font-awesome";
+
+$font-arial: Arial, Helvetica, sans-serif;
+$font-open-sans: "Open Sans Condensed",sans-serif;
+
+$max-page-width: 958px; 
+
+*{
+	transition: all .2s ease;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+}
+.printElement {
+	display: none;
+}
+
+.clearfix {
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 16px;
+	font-family: $font-arial;
+}
+
+a {
+	color: #015b7e;
+	transition: all .2s ease;
+	outline: none;
+	text-decoration: underline;
+	&:visited {
+		color: #015b7e;
+	}
+	&:hover, &:focus {
+		color: #ae7c00;
+	}
+	&:active {
+		color: #000;
+		text-decoration: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font: 38px/1.17 $font-arial;
+	margin: 25px 0;
+}
+
+img, iframe, table, input, select{
+	max-width: 100%;
+}						  
+
+body.design {
+}
+
+.center-site {
+	@extend .clearfix;
+	margin: 0 auto;
+	max-width: $max-page-width;
+}
+
+.top-menu-wrap{
+	background-color: #ff6200;
+}
+.top-menu-container{
+	@extend .center-site;
+	padding: 5px 0 3px;
+}
+
+.cta{
+	float: left;
+	color: #be3600;
+	font: 700 16px $font-open-sans;
+	text-transform: uppercase;
+	margin: 2px 0;
+}
+.cta-text{
+	display: inline-block;
+	margin-right: 1px;
+}
+.cta-num{
+	color: #fff;
+	display: inline-block;
+	a{
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+.login-option{
+	float: right;
+	font: 700 16px $font-open-sans;
+	text-transform: uppercase;
+	a{
+		text-decoration: none;
+		padding: 0 0 0 10px;
+		&.login-link{
+			color: #be3600;
+		}
+		&.signup-link{
+			color: #fff;
+		}
+	}
+}
+
+.header-wrap{
+	background-color: #f9f9f9;
+}
+.header-container{
+	@extend .center-site;
+	padding: 10px 0;
+}
+
+.brand {
+	float: left;
+	display: inline-block;
+	margin: 28px 0;
+	img{
+		display: block;
+	}
+}
+.brand-image {
+	max-width: 100%;
+}
+
+.container-menu{
+	float: right;
+	width: 47%;
+	margin: 24px 0;
+}
+
+.nav-main{
+	width: 100%;
+	ul {
+		/*@include clearfix;*/
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/*display: table;
+		table-layout: auto;*/
+		width: 100%;
+		li {
+			float: left;
+			width: 14.28%;
+			/*display: table-cell;*/
+			position: relative;
+			a {
+				display: block;
+				padding: 0px;
+				text-decoration: none;
+				font: 400 14px/1 $font-arial;
+				color: #333333;
+				text-align: center;
+				text-transform: uppercase;
+				span{
+					display: inline-block;
+					padding: 12px 0 10px;
+					border-bottom: 4px solid transparent;
+				}
+
+				&:hover, &:focus, &:active{
+					font-weight: 700;
+					span{ border-color: #ff6200; }
+				}
+			}
+			ul {
+				margin: 0;
+				padding: 15px 0;
+				list-style-type: none;
+				transition-property: opacity, visibility;
+				transition-duration: 200ms, 200ms;
+				transition-timing-function: ease-out, linear;
+				transition-delay: 0s;
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				z-index: 20;
+				visibility: hidden;
+				width: 150px;
+				background-color: #fff;
+				border: 1px solid #454545;
+				li{
+					float: none;
+					width: 100%;
+					position: relative;
+					a{
+						display: block;
+						color: #454545;
+						line-height: 1;
+						font: 14px $font-open-sans;
+						padding: 8px 20px !important;
+						text-align: left;
+					}
+				}
+				ul{
+					left: 100%;
+					top: 0;
+					position: absolute;
+				}
+			}
+			&:hover, &:focus, &:active{
+				>ul{
+					display: block !important;
+					visibility: visible !important;
+					opacity: 1;
+					z-index: 20;
+					li{
+						&:hover, &:focus, &:active{
+							>ul{
+								display: block !important;
+								visibility: visible !important;
+								opacity: 1;
+								z-index: 20;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.container-page{
+	@extend .center-site;
+	padding: 10px 0;
+}
+
+.page-navigation{
+	margin: 27px 0;
+	padding: 0;
+	list-style-type: none;
+	li{
+		float: left;
+		color: #929292;
+		a{
+			display: inline-block;
+			text-decoration: none;
+			color: #929292;
+			padding: 0 5px;
+			font: 13px $font-arial;
+			&.active{
+				font-weight: 700;
+				color: #222222;
+			}
+			&:hover, &:focus, &:active{
+				color: #ff6200;
+			}
+		}
+	}
+}
+
+.column-contents{
+	@extend .clearfix;
+	width: 100%;
+}
+
+.page-title{
+	color: #ff6200;
+	font: 700 27px $font-arial;
+	margin: 9px 0;
+}
+
+.content-area{
+	width: 85%;
+	color: #878787;
+	font: 14px/1.4 $font-arial;
+	p{
+		margin: 10px 0;
+	}
+}
+
+.column-contact{
+	@extend .clearfix;
+	padding: 20px 0;
+}
+
+.title-form, .title-contact{
+	color: #ff6200;
+	font: 23px $font-arial;
+	margin: 17px 0;
+	padding-bottom: 7px;
+	border-bottom: 6px solid #525252;
+	text-transform: uppercase;
+}
+
+.contact-form{
+	float: left;
+	width: 49.7%;
+}
+
+.input-form{
+	width: 100%;
+	padding: 2px 0;
+	input, textarea{
+		outline: none;
+		width: 100%;
+		padding: 7px 10px;
+		color: #878787;
+		font: 14px $font-arial;
+		background-color: #f6f6f6;
+		margin: 0 0 10px;
+		border: 1px solid #ededed;
+		&#inputPhone{
+			float: left;
+			width: 48%;
+		}
+		&#inputEmail{
+			float: right;
+			width: 48%;
+		}
+	}
+	textarea{
+		height: 110px;
+	}
+	#formSubmit{
+		width: auto;
+		padding: 10px 20px;
+		color: #fff;
+		font: 700 14px $font-arial;
+		text-transform: uppercase;
+		background-color: #ff6200;
+		margin: 4px 0;
+		&:hover, &:focus, &:active{
+			background-color: #333;
+		}
+	}
+}
+
+.contact-address{
+	float: right;
+	width: 42.2%;
+	color: #595959;
+	font: 14px $font-arial;
+	.main-address{
+		display: block;
+		margin: 6px 0 16px;
+	}
+}
+
+.social-links{
+	margin: 60px 0 10px;
+	padding: 0;
+	list-style-type: none;
+	li{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 2px 0 0;
+		a{
+			display: block;
+			background-color: #cacaca;
+			height: 32px;
+			width: 32px;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			padding-top: 8px;
+			font-size: 17px !important;
+			&:hover, &:focus, &:active{
+				background-color: #363636;
+			}
+		}
+		&.sm-fb a{
+			@extend .fa, .fa-facebook;
+		}
+		&.sm-twitter a{
+			@extend .fa, .fa-twitter;
+		}
+		&.sm-linkedin a{
+			@extend .fa, .fa-linkedin;
+		}
+		&.sm-pinterest a{
+			@extend .fa, .fa-pinterest-p;
+		}
+	}
+}
